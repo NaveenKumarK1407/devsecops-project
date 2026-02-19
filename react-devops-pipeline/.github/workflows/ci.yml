@@ -10,5 +10,6 @@ jobs:
       - uses: actions/checkout@v4
 
       - run: |
+          cd react-devops-pipeline
           docker build -t naveen/react -f Dockerfile.dev .
           docker run -e CI=true naveen/react npm run test
