@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build  -t naveen/react -f Dockerfile.dev  .
+
+script:
+  - docker run -e CI=true naveen/react npm run test
